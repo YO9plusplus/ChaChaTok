@@ -26,7 +26,8 @@ func main() {
 
 	//using cors to able calling api from frontend
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:5173",
+		AllowOrigins: "*",
+		// AllowOrigins: "http://localhost:5173",
         AllowMethods: "GET,POST,PATCH,OPTIONS",
         AllowHeaders: "Content-Type,Authorization",
 	}))
