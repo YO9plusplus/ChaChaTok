@@ -17,6 +17,7 @@ export const MILK_OPTIONS = [
 	{ value: 'fresh', label: 'นมสด' },
 	{ value: 'oat',   label: 'นมโอ้ต' },
 	{ value: 'almond', label: 'นมอัลมอนด์' },
+	{ value: 'lactose-free', label: 'นมแลคโตสฟรี'}
 ]
 
 export const MOCK_ORDERS = [
