@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react"
-import { createOrder, MENU_CONFIG, SWEETNESS_OPTIONS, MILK_OPTIONS } from "../api"
+import { createOrder, MENU_CONFIG, SWEETNESS_OPTIONS, MILK_OPTIONS, nextMockId } from "../api"
 
 const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true'
 
@@ -90,7 +90,7 @@ export default function OrderPage() {
 			const payload = { ...currentForm, price: MENU_CONFIG[currentForm.menu].price, is_random: false }
 			if (USE_MOCK) {
 				await new Promise(r => setTimeout(r, 600))
-        setOrderId(Math.floor(Math.random() * 90) + 10)
+        setOrderId(nextMockId())
 			} else {
 				const res = await createOrder(payload)
         setOrderId(res.data.id)
@@ -132,10 +132,10 @@ export default function OrderPage() {
         </div>
         <div className="text-center space-y-2">
           <p className="font-display text-3xl text-tea-900">สั่งสำเร็จแล้วค่ะ!</p>
-          <p className="text-bark-400 text-sm">คุณคือคิวที่</p>
+          <p className="text-bark-400 text-lg">คุณคือคิวที่</p>
           <p className="font-display text-6xl text-tea-700">#{orderId}</p>
         </div>
-        <p className="text-xs text-bark-400 uppercase tracking-widest">กรุณารอสักครู่นะคะ 🍵</p>
+        <p className="text-base text-bark-400 uppercase tracking-widest">กรุณารอสักครู่นะคะ 🍵</p>
       </div>
     </div>
   )}
