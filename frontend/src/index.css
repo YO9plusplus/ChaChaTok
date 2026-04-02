@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-tea-50:  #fdf6ed;
+  --color-tea-100: #f9e8cc;
+  --color-tea-200: #f2cf96;
+  --color-tea-300: #e9b05d;
+  --color-tea-500: #c97820;
+  --color-tea-700: #844516;
+  --color-tea-900: #5a2d18;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Lato", system-ui, sans-serif;
+}
+
+body {
+  background-color: #fdf6ed;
+  font-family: "Lato", system-ui, sans-serif;
+}
