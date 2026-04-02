@@ -48,7 +48,10 @@ export default function KitchenPage() {
 
 	const onMessage = useCallback((msg) => {
 		if (msg.type === 'new_order') {
-			setOrders(prev => [msg.data, ...prev])
+			setOrders(prev => {
+				if (prev.find(o => o.id === msg.data.id)) return prev
+				return [...prev, msg.data,]
+			})
 		} else if (msg.type === 'order_updated') {
 			setOrders(prev => prev.map(o => o.id === msg.data.id ? msg.data : o))
 		}

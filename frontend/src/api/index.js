@@ -3,9 +3,9 @@ import axios from 'axios'
 const api = axios.create({ baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080' })
 
 export const createOrder = (order) => api.post('/api/orders', order)
-export const getOrders = (status) => api.get('api/orders', { params: { status }})
+export const getOrders = (status) => api.get('/api/orders', { params: { status }})
 export const updateOrder = (id, data) => api.patch(`/api/orders/${id}`, data)
-export const getAnalytics = () => api.get('api/analytics')
+export const getAnalytics = () => api.get('/api/analytics')
 
 export const MENU_CONFIG = {
 	thai_tea:  { label: 'ชาไทย', price: 39, color: 'bg-tea-200 text-tea-900'},
@@ -14,10 +14,10 @@ export const MENU_CONFIG = {
 
 export const SWEETNESS_OPTIONS = [0, 25, 50, 75, 100]
 export const MILK_OPTIONS = [
-	{ value: 'fresh', label: 'นมสด' },
-	{ value: 'oat',   label: 'นมโอ้ต' },
-	{ value: 'almond', label: 'นมอัลมอนด์' },
-	{ value: 'lactose-free', label: 'นมแลคโตสฟรี'}
+	{ value: 'fresh_milk', label: 'นมสด' },
+	{ value: 'oat_milk',   label: 'นมโอ้ต' },
+	{ value: 'almond_milk', label: 'นมอัลมอนด์' },
+	{ value: 'lactose_free_milk', label: 'นมแลคโตสฟรี'}
 ]
 
 export const MOCK_ORDERS = [

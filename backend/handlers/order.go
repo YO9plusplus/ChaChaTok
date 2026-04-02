@@ -15,7 +15,7 @@ import (
 // c = (req,res) from json
 func GetOrders(c *fiber.Ctx) error {
 	var orders []models.Order
-	query := database.DB.Order("created_at desc")
+	query := database.DB.Order("created_at asc")
 
 	if status := c.Query("status"); status != ""{
 		if !models.ValidStatus[models.Status(status)]{
