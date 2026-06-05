@@ -15,8 +15,6 @@ export const MENU_CONFIG = {
 export const SWEETNESS_OPTIONS = [0, 25, 50, 75, 100]
 export const MILK_OPTIONS = [
 	{ value: 'fresh_milk', label: 'นมสด' },
-	{ value: 'oat_milk',   label: 'นมโอ้ต' },
-	{ value: 'almond_milk', label: 'นมอัลมอนด์' },
 	{ value: 'lactose_free_milk', label: 'นมแลคโตสฟรี'}
 ]
 
